@@ -1,4 +1,4 @@
-package com.rowa.javalabee;
+package com.rowa.javalabee.models;
 
 public class User {
     private Long id;
@@ -6,25 +6,30 @@ public class User {
     private String lastName;
     private String phone;
     private String email;
+    private Long roleId;
     private Role role;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, String phone, String email, Role role) {
+    public User(String firstName, String lastName, String phone,
+                String email, Role role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
         this.role = role;
+        this.roleId = (role != null) ? role.getId() : null;
     }
 
-    public User(Long id, String firstName, String lastName, String phone, String email, Role role) {
+    public User(Long id, String firstName, String lastName, String phone,
+                String email, Long roleId, Role role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
+        this.roleId = roleId;
         this.role = role;
     }
 
@@ -68,12 +73,25 @@ public class User {
         this.email = email;
     }
 
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
     public Role getRole() {
         return role;
     }
 
     public void setRole(Role role) {
         this.role = role;
+        this.roleId = (role != null) ? role.getId() : null;
+    }
+
+    public boolean canEditMovies() {
+        return role != null && role.canEditMovies();
     }
 
     @Override
@@ -84,7 +102,9 @@ public class User {
                 ", Last Name = '" + lastName + '\'' +
                 ", Phone = '" + phone + '\'' +
                 ", Email = '" + email + '\'' +
-                ", Role = '" + role + '\'' +
+                ", Role = '" + (role != null ? role.getName() : "None") + '\'' +
+                ", Can Edit Movies = " + canEditMovies() +
                 '}';
     }
 }
+

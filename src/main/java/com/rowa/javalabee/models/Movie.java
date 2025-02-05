@@ -1,23 +1,31 @@
-package com.rowa.javalabee;
+package com.rowa.javalabee.models;
 
 public class Movie {
     private Long id;
     private String title;
     private String genre;
     private int releaseYear;
+    private String description;
+    private User addedBy;
 
     public Movie() {
     }
 
-    public Movie(String title) {
+    public Movie(String title, String genre, int releaseYear, String description, User addedBy) {
         this.title = title;
+        this.genre = genre;
+        this.releaseYear = releaseYear;
+        this.description = description;
+        this.addedBy = addedBy;
     }
 
-    public Movie(Long id, String title, String genre, int releaseYear) {
+    public Movie(Long id, String title, String genre, int releaseYear, String description, User addedBy) {
         this.id = id;
         this.title = title;
         this.genre = genre;
         this.releaseYear = releaseYear;
+        this.description = description;
+        this.addedBy = addedBy;
     }
 
     public Long getId() {
@@ -52,6 +60,22 @@ public class Movie {
         this.releaseYear = releaseYear;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public User getAddedBy() {
+        return addedBy;
+    }
+
+    public void setAddedBy(User addedBy) {
+        this.addedBy = addedBy;
+    }
+
     @Override
     public String toString() {
         return "Movie {" +
@@ -59,6 +83,8 @@ public class Movie {
                 ", Title = '" + title + '\'' +
                 ", Genre = '" + genre + '\'' +
                 ", Release Year = " + releaseYear +
+                ", Description = '" + description + '\'' +
+                ", Added By = '" + (addedBy != null ? addedBy.getFirstName() + " " + addedBy.getLastName() : "Unknown") + '\'' +
                 '}';
     }
 }
