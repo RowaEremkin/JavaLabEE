@@ -11,7 +11,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String title, String genre, int releaseYear, String description, User addedBy) {
+    public Movie(String title, User addedBy, String genre, int releaseYear, String description) {
         this.title = title;
         this.genre = genre;
         this.releaseYear = releaseYear;
@@ -19,7 +19,7 @@ public class Movie {
         this.addedBy = addedBy;
     }
 
-    public Movie(Long id, String title, String genre, int releaseYear, String description, User addedBy) {
+    public Movie(Long id, String title, User addedBy, String genre, int releaseYear, String description) {
         this.id = id;
         this.title = title;
         this.genre = genre;

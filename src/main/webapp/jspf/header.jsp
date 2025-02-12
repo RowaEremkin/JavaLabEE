@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html"
          pageEncoding="UTF-8"%>
 <header>
-    <a href="/"><img alt="Логотип" id="top-image" src="images/logo.png"></a> <!-- Убедитесь, что путь к логотипу правильный -->
+    <a href="/">
+        <img alt="Логотип" id="top-image" src="images/logo.jpg">
+    </a>
     <div id="user-panel">
         <h1>Каталог фильмов</h1>
         <nav>
@@ -15,43 +17,43 @@
 </header>
 
 <style>
-    /* Стили для заголовка */
     header {
-        background-color: #333; /* Темный фон для заголовка */
-        color: white; /* Белый текст */
+        background-color: #333;
+        color: white;
         padding: 20px;
         display: flex;
         align-items: center;
-        justify-content: space-between; /* Распределяем пространство между элементами */
+        justify-content: space-between;
     }
 
     #top-image {
-        height: 60px; /* Высота логотипа */
+        height: 5rem;
+        width: 5rem;
     }
 
     #user-panel {
         display: flex;
-        flex-direction: column; /* Вертикальное расположение элементов */
-        align-items: flex-start; /* Выравнивание по левому краю */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    nav ul {
-        list-style-type: none; /* Убираем маркеры списка */
-        padding: 0; /* Убираем отступы */
-        margin: 0; /* Убираем внешние отступы */
+    header nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
     }
 
-    nav ul li {
-        display: inline; /* Горизонтальное расположение ссылок */
-        margin-right: 15px; /* Отступ между ссылками */
+    header nav ul li {
+        display: inline;
+        margin-right: 15px;
     }
 
-    nav ul li a {
-        color: white; /* Цвет ссылок */
-        text-decoration: none; /* Убираем подчеркивание */
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
     }
 
-    nav ul li a:hover {
-        text-decoration: underline; /* Подчеркивание при наведении */
+    header nav ul li a:hover {
+        text-decoration: underline;
     }
 </style>

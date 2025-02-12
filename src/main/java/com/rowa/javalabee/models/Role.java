@@ -35,7 +35,7 @@ public class Role {
         this.name = name;
     }
 
-    public boolean canEditMovies() {
+    public boolean getCanEditMovies() {
         return canEditMovies;
     }
 

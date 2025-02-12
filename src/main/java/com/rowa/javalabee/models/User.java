@@ -18,19 +18,17 @@ public class User {
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
-        this.role = role;
-        this.roleId = (role != null) ? role.getId() : null;
+        setRole(role);
     }
 
     public User(Long id, String firstName, String lastName, String phone,
-                String email, Long roleId, Role role) {
+                String email, Role role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
-        this.roleId = roleId;
-        this.role = role;
+        setRole(role);
     }
 
     public Long getId() {
@@ -91,7 +89,7 @@ public class User {
     }
 
     public boolean canEditMovies() {
-        return role != null && role.canEditMovies();
+        return role != null && role.getCanEditMovies();
     }
 
     @Override

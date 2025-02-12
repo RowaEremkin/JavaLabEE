@@ -32,6 +32,16 @@
             <a href="#" class="btn">Смотреть</a>
         </div>
     </div>
+    <div>
+        <h2>Функции системы</h2>
+        <nav>
+            <ul>
+                <li><a href="/JavaLabEE/movies">Фильмы</a>
+                <li><a href="/JavaLabEE/users">Пользователи</a>
+                <li><a href="/JavaLabEE/roles">Роли</a>
+            </ul>
+        </nav>
+    </div>
 </div>
 <jsp:include page="jspf/footer.jsp" />
 </body>
